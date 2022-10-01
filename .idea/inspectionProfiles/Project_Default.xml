@@ -24,6 +24,7 @@
             <item index="16" class="java.lang.String" itemvalue="sip" />
             <item index="17" class="java.lang.String" itemvalue="datashape" />
             <item index="18" class="java.lang.String" itemvalue="mkl-service" />
+            <item index="18" class="java.lang.String" itemvalue="plotly" />
           </list>
         </value>
       </option>
