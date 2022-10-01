@@ -17,7 +17,7 @@ def teste_3 (name):
                     "cada loja nos próximos 6 meses. "
                     "Ele gostaria de reformar as lojas e precisava destes "
                     "dados para determinar o valor de investimento em cada loja. "
-                    "Com base no Mind Map abaixo foram elaboradas 12 Hipóteses a "
+                    "Com base no Mind Map abaixo foram elaborates 12 Hipóteses a "
                     "serem testadas.")
 
         st.write("https://www.kaggle.com/c/rossmann-store-sales")
