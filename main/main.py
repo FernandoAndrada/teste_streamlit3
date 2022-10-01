@@ -1,15 +1,14 @@
 import time
-import plotly.express as px
 import pandas as pd
 import streamlit as st
+import plotly.express as px
+def get_data(path):
 
-def get_data( path ):
-    df = pd.read_csv( path )
+    df = pd.read_csv(path)
 
     return df
 
-def teste_3 (name):
-
+def teste_3(name):
     st.title("EDA (Exploration Data Analize)")
 
     with st.expander("Rossmann Store Sales"):
@@ -25,13 +24,10 @@ def teste_3 (name):
     with st.expander("Mind Map Rossmann Store"):
         st.image('img\Daily_Store_Sales.png')
 
-
-
-    #st.write(df.columns)
+    # st.write(df.columns)
     st.write("DataFrame Rossmann Store")
     df4 = df.drop(columns=['Unnamed: 0'])
     st.write(df4.head(5))
-
 
     tab1, tab2, tab3 = st.tabs(["Hipótese 1", "Hipótese 2", "Hipótese 3"])
 
@@ -41,11 +37,10 @@ def teste_3 (name):
 
     tab1.markdown("### Lojas com maior variedade de estoque deveriam vender mais."
                   "\n"
-                     "**Falsa** - Lojas com MAIOR VARIEDADE vendem MENOS.")
+                  "**Falsa** - Lojas com MAIOR VARIEDADE vendem MENOS.")
     st.write("basic = Estoque básico; ")
     st.write("extented = Estoque com uma variedade um pouco maior;")
     st.write("extra = Estoque com muita variedade.")
-
 
     aux1 = df4[['assortment', 'sales']].groupby('assortment').sum().reset_index()
     fig = px.histogram(aux1, x='assortment', y='sales', color="sales")
@@ -54,8 +49,6 @@ def teste_3 (name):
     fig1 = px.scatter(aux1, x='sales', y='assortment', color='sales',
                       size='sales', hover_name='assortment')
     st.plotly_chart(fig1)
-
-
 
     # aux2 = df4[['year_week', 'assortment', 'sales']].groupby(['year_week', 'assortment']).sum().reset_index()
     # aux2.pivot(index='year_week', columns='assortment', values='sales').plot()
@@ -69,15 +62,11 @@ def teste_3 (name):
 
     st.write(" ")
 
-
-
-
-
     st.write(""" Teste Botões """)
 
-    st.sidebar.write ("Teste sidebar")
+    st.sidebar.write("Teste sidebar")
 
-    st.sidebar.button( "Teste")
+    st.sidebar.button("Teste")
 
     st.sidebar.selectbox(
         "How would you like to be contacted?",
@@ -104,12 +93,8 @@ def teste_3 (name):
     # st.balloons()
 
 
-
-
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-
     df = get_data('df5_rossmann_store.csv')
 
-    teste_3 ( 'teste_3' )
-
+    teste_3('teste_3')
