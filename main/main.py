@@ -22,7 +22,7 @@ def teste_3(name):
         st.write("https://www.kaggle.com/c/rossmann-store-sales")
 
     with st.expander("Mind Map Rossmann Store"):
-        st.image('img\Daily_Store_Sales.png')
+        st.image('img/Daily_Store_Sales.png')
 
     # st.write(df.columns)
     st.write("DataFrame Rossmann Store")
